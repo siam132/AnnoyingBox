@@ -60,7 +60,7 @@ class App extends React.Component {
       this.click2.play();
     } else {
       this.click1.play();
-      //this.horn.play();
+      this.horn.play();
     }
 
     // Keep track of which beat we're on
