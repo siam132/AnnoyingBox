@@ -27,6 +27,13 @@
   margin: 10px;
 }
 
+.tempo-field{
+  width: 100%;
+  padding: 8px;
+  background-color: antiquewhite;
+  margin: 10px;
+}
+
 .metronome button {
   background: #da2e25;
   padding: 10px;

@@ -60,7 +60,7 @@ class App extends React.Component {
       this.click2.play();
     } else {
       this.click1.play();
-      this.horn.play();
+      //this.horn.play();
     }
 
     // Keep track of which beat we're on
@@ -68,6 +68,15 @@ class App extends React.Component {
       count: (state.count + 1) % state.beatsPerMeasure,
     }));
   };
+
+  handleBeatsPerMeasure = (event) => {
+    const beatsPerMeasure = event.target.value;
+    this.setState({playing:false})
+    console.log(beatsPerMeasure);
+    this.setState({ beatsPerMeasure,playing:true });
+  };
+
+
   render() {
     return (
       <div className="App-header">
@@ -85,8 +94,15 @@ class App extends React.Component {
           <button className="metronome" onClick={this.startStop}>
             {this.state.playing ? "Stop" : "Start"}
           </button>
+          <input
+            className="tempo-field"
+            value={this.state.beatsPerMeasure}
+            onChange={this.handleBeatsPerMeasure}
+            placeholder="Enter Tempo"
+            type="number"
+          ></input>
         </div>
-        <h1>Beats count: {this.state.count}</h1>
+        <p>Beats count: {this.state.count}</p>
       </div>
     );
   }
